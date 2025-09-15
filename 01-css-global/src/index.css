@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+:root {
+	--dark-theme-primary: #3c3c4d;
+	--dark-theme-secondary: #2f2f31;
+	--dark-theme-text: #fff;
+
+	--light-theme-primary: #b1b1f3;
+	--light-theme-secondary: #e7e7e7;
+	--light-theme-text: #141414;
+
+	--gap: 12px;
+	--margin: 16px;
+	--padding: 12px;
+	--border-radius: 8px;
+	--transition-time: .2s;
+}
