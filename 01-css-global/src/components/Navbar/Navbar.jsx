@@ -8,7 +8,6 @@ export default function NavBar({theme, handleChangeTheme}) {
 	return (
 		<header className='header--navbar'>
 			<img src={theme == 'light'? logoBlack : logoWhite} alt="Logo RFR" className='header--logo' />
-			<h1>Mini Loja</h1>
 			<div>
 				<button type="button" className={`header--toggleThemeBtn t-${theme}`} onClick={handleChangeTheme}>
 					<MdSunny className={`header--theme-icon ${theme == 'light' ? 'active': ''}`}/>

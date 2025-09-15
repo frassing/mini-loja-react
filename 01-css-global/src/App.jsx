@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import NavBar from './components/Navbar/Navbar'
+import ProductCard from './components/ProductCard/ProductCard'
+import productsList from './data/products.json'
 
 function App() {
   const storedTheme = JSON.parse(localStorage.getItem('theme'))
@@ -16,12 +18,14 @@ function App() {
     }
   }
 
-
   return (
-    <div className='app-main' data-theme={theme}>
+    <div className='app-container' data-theme={theme}>
       <NavBar theme={theme} handleChangeTheme={onChangeTheme}/>
       <main>
         <h2>Produtos</h2>
+        <div className='products-grid'>
+          {productsList.map(p => <ProductCard key={p.id} product={p}/>)}
+        </div>
       </main>
     </div>
   )
