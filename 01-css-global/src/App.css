@@ -23,6 +23,9 @@
 	padding: 0 var(--padding);
 	background-color: var(--light-theme-primary);
 	color: var(--light-theme-text);
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 .header--logo {
@@ -96,7 +99,6 @@
 	position: absolute;
 	top: -20px;
 	right: 0;
-	opacity: 0;
 }
 
 /* BUTTON COMPONENT */
@@ -144,12 +146,6 @@
 
 
 /* MAIN */
-/* main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-} */
-
 main h2 {
 	text-align: center;
 	margin: var(--margin) auto;

@@ -4,7 +4,8 @@ import { FaMoon } from 'react-icons/fa'
 import logoBlack from '../../assets/logo-black.png'
 import logoWhite from '../../assets/logo-white.png'
 
-export default function NavBar({theme, handleChangeTheme}) {
+export default function NavBar({theme, handleChangeTheme, cartCount}) {
+	const count = cartCount > 0 ? cartCount : ''
 	return (
 		<header className='header--navbar'>
 			<img src={theme == 'light'? logoBlack : logoWhite} alt="Logo RFR" className='header--logo' />
@@ -16,7 +17,7 @@ export default function NavBar({theme, handleChangeTheme}) {
 
 				<div className="header--cart">
 					<FaCartShopping className="header--cart-icon"/>
-					<span className="header--cart-items">0</span>
+					<span className="header--cart-items">{count}</span>
 				</div>
 			</div>
 		</header>

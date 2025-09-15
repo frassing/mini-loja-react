@@ -1,6 +1,6 @@
 import Button from '../Button/Button'
 
-export default function ProductCard({product}){
+export default function ProductCard({product, handleAddToCart}){
 	const formatPrice = (price) => {
 		return price.toString().replace('.', ',')
 	}
@@ -16,7 +16,7 @@ export default function ProductCard({product}){
 				<p>{product.rating}</p>
 			</section>
 			{product.tag && <p className='product-card--tag'>{product.tag}</p>}
-			<Button variant='solid'>Adicionar ao carrinho</Button>
+			<Button variant='solid' onClick={handleAddToCart}>Adicionar ao carrinho</Button>
 		</article>
 	)
 }
