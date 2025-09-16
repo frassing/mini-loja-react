@@ -17,9 +17,9 @@ export default function ProductCard({product, handleAddToCart, loading}){
 			<section className='product-card--content'>
 				<h3 className='product-card--name'>{product.name}</h3>
 				<p className='product-card--price'>{formatPrice(product.price)}</p>
-				<div className='product-card--rating'>
+				<div className='product-card--rating' aria-label={`Produto com ${product.rating} de 5 estrelas`}>
 					{[...Array(5)].map((_, index) => 
-						<span className='product-card--rating-stars' key={index}>{index < Math.floor(product.rating) ? '★' :'☆' }</span>
+						<span className='product-card--rating-stars' aria-hidden='true' key={index}>{index < Math.floor(product.rating) ? '★' :'☆' }</span>
 					)}
 				</div>
 			</section>

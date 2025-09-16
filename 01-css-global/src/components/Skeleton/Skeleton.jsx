@@ -1,5 +1,5 @@
 export default function Skeleton() {
-	return <div className="skeleton--container">
+	return <div className="skeleton--container" aria-label="Carregando o produto">
 		<div className='skeleton--square'></div>
 		<div className='skeleton--line'></div>
 		<div className='skeleton--line'></div>

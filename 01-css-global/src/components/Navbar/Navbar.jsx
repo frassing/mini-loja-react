@@ -10,14 +10,14 @@ export default function NavBar({theme, handleChangeTheme, cartCount}) {
 		<header className='header--navbar'>
 			<img src={theme == 'light'? logoBlack : logoWhite} alt="Logo RFR" className='header--logo' />
 			<div>
-				<button type="button" className={`header--toggleThemeBtn t-${theme}`} onClick={handleChangeTheme}>
-					<MdSunny className={`header--theme-icon ${theme == 'light' ? 'active': ''}`}/>
-					<FaMoon className={`header--theme-icon ${theme == 'dark' ? 'active': ''}`}/>
+				<button type="button" className={`header--toggleThemeBtn t-${theme}`} onClick={handleChangeTheme} aria-label={theme == 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'} aria-pressed={theme == 'light'}>
+					<MdSunny aria-hidden='true' className={`header--theme-icon ${theme == 'light' ? 'active': ''}`}/>
+					<FaMoon aria-hidden='true' className={`header--theme-icon ${theme == 'dark' ? 'active': ''}`}/>
 				</button>
 
 				<div className="header--cart">
-					<FaCartShopping className="header--cart-icon"/>
-					<span className="header--cart-items">{count}</span>
+					<FaCartShopping className="header--cart-icon" aria-hidden='true'/>
+					<span className="header--cart-items" aria-label='Itens no carrinho'>{count}</span>
 				</div>
 			</div>
 		</header>
