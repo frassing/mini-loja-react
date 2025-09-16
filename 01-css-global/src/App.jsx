@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import NavBar from './components/Navbar/Navbar'
 import ProductCard from './components/ProductCard/ProductCard'
+import Footer from './components/Footer/Footer'
 import productsList from './data/products.json'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           {productsList.map(p => <ProductCard key={p.id} product={p} handleAddToCart={onAddToCart} />)}
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }
