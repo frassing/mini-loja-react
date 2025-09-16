@@ -1,11 +1,15 @@
 import Button from '../Button/Button'
+import Skeleton from '../Skeleton/Skeleton'
 
-export default function ProductCard({product, handleAddToCart}){
+export default function ProductCard({product, handleAddToCart, loading}){
 	const formatPrice = (price) => {
 		return price.toString().replace('.', ',')
 	}
 
-	return (
+	if (loading) {
+		return <Skeleton/>
+	} else {
+		return (
 		<article className="product-card--container">
 			<picture className='product-card--picture'>
 				<img src={product.image} alt={product.name}/>
@@ -22,5 +26,5 @@ export default function ProductCard({product, handleAddToCart}){
 			{product.tag && <p className='product-card--tag'>{product.tag}</p>}
 			<Button variant='solid' onClick={handleAddToCart}>Adicionar ao carrinho</Button>
 		</article>
-	)
+	)}
 }
