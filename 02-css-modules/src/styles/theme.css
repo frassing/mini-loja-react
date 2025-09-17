@@ -18,6 +18,7 @@ html, body {
 	--light-color: #fff;
 	--rating-star: #ffc82f;
 	--shadow: rgba(49, 49, 49, 0.281);
+	--skeleton-color: #dddddd;
 
 	--padding-sm: 6px; 
 	--padding-m: 12px;

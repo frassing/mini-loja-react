@@ -12,3 +12,20 @@
 	margin: var(--margin-m) var(--margin-sm);
 	gap: var(--gap-m);
 }
+
+@media (min-width: 481px) {
+	.productsGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 769px) {
+	.productsGrid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--gap-m)*2)
+	}
+}
+@media (min-width: 1025px) {
+	.productsGrid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

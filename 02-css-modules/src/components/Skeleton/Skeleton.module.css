@@ -1,0 +1,51 @@
+.skeletonContainer {
+	max-width: 220px;
+	padding: var(--padding-sm);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: calc(var(--gap-sm)/2);
+	box-shadow: 0 3px 4px var(--shadow);
+	background-color: var(--light-color);
+}
+
+.square {
+	background-color: var(--skeleton-color);
+	width: 206px;
+	aspect-ratio: 1/1;
+	border-radius: var(--border-radius);
+}
+
+.starsSquare {
+	width: 1.2em;
+	height: 1.2em;
+	display: inline-block;
+	margin-right: calc(var(--margin-sm)/2);
+	background-color: var(--skeleton-color);
+}
+
+.line {
+	width: 95%;
+	height: 1em;
+	background-color: var(--skeleton-color);
+	align-self: self-start;
+}
+
+.square+.line {
+	height: 2em;
+	width: 100%;
+}
+
+.line:nth-child(5) {
+	width: 50%;
+	margin: var(--margin-m) 0;
+	height: 1.5em;
+	align-self: center;
+}
+
+.retangle {
+	width: 90%;
+	height: 40px;
+	background-color: var(--skeleton-color);
+}
