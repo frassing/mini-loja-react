@@ -16,6 +16,7 @@ html, body {
 	--accent-color-2: #860847;
 	--accent-color-3: #d1127254;
 	--light-color: #fff;
+	--card-text-color: #0a0a0a;
 	--rating-star: #ffc82f;
 	--shadow: rgba(49, 49, 49, 0.281);
 	--skeleton-color: #dddddd;
@@ -36,5 +37,4 @@ html, body {
 [data-theme='dark'] {
 	--bg-color: #313131;
 	--text-color: #f2f2f2;
-
 }

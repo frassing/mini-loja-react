@@ -11,6 +11,7 @@
 	position: relative;
 	box-shadow: 0 3px 4px var(--shadow);
 	background-color: var(--light-color);
+	color: var(--card-text-color);
 }
 
 .cardContainer picture {
