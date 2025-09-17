@@ -3,6 +3,7 @@ import FooterStyled from "./components/FooterStyled"
 import NavBarStyled from './components/NavBarStyled'
 import PRODUCTS from './data/products.json'
 import ProductCard from './components/ProductCard'
+import { useEffect, useState } from 'react'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -57,13 +58,23 @@ const H2 = styled.h2`
 `
 
 function App() {
+  const [ loading, setLoading ] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
+
   return (
     <>
       <GlobalStyle />
       <NavBarStyled />
       <H2>Produtos</H2>
       <ProductsGrid>
-        {PRODUCTS.map(p => <ProductCard key={p.id} product={p} />)}
+        {PRODUCTS.map(p => <ProductCard key={p.id} product={p} loading={loading}/>)}
       </ProductsGrid>
       <FooterStyled />
     </>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ButtonStyled from "../components/ButtonStyled"
+import Skeleton from "./Skeleton";
 
 const Article = styled.article`
 	display: flex;
@@ -68,7 +69,7 @@ const RatingStar = styled.span`
 	color: #e4bc09;
 `
 
-export default function ProductCard({product}) {
+export default function ProductCard({product, loading}) {
 	const formatPrice = (p) => {
 		return p.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
 	}
@@ -80,17 +81,20 @@ export default function ProductCard({product}) {
 		btnVariant = 'outline'
 	}
 
-	return <Article>
-		<ImageContainer>
-			<CardImage src={product.image} alt={product.name}/>
-		</ImageContainer>
-		<CardTitle>{product.name}</CardTitle>
-		<CardPrice>{formatPrice(product.price)}</CardPrice>
-		<div aria-label={`Avaliações do produto. ${product.rating} de 5 estrelas`}>
-			{[...Array(5)].map((_, i) => <RatingStar key={i} aria-hidden="true">{i < Math.floor(product.rating) ? '★' :'☆' }</RatingStar>)}
-		</div>
-		{product.tag && <CardTag>{product.tag}</CardTag>}
-		<ButtonStyled variant={btnVariant}>Adicionar ao carrinho</ButtonStyled>
-
-	</Article>
+	if (loading) {
+		return <Skeleton/>
+	} else {
+		return <Article>
+			<ImageContainer>
+				<CardImage src={product.image} alt={product.name} loading="lazy"/>
+			</ImageContainer>
+			<CardTitle>{product.name}</CardTitle>
+			<CardPrice>{formatPrice(product.price)}</CardPrice>
+			<div aria-label={`Avaliações do produto. ${product.rating} de 5 estrelas`}>
+				{[...Array(5)].map((_, i) => <RatingStar key={i} aria-hidden="true">{i < Math.floor(product.rating) ? '★' :'☆' }</RatingStar>)}
+			</div>
+			{product.tag && <CardTag>{product.tag}</CardTag>}
+			<ButtonStyled variant={btnVariant}>Adicionar ao carrinho</ButtonStyled>
+		</Article>
+	}
 }
