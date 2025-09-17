@@ -9,6 +9,7 @@ const Button = styled.button`
 	font-size: 1em;
 	color: ${({$variant}) => ($variant == 'solid' ? 'var(--text-light)' : 'var(--fg-color)')};
 	background-color: ${({$variant}) => ($variant == 'solid' ? 'var(--fg-color)' : 'transparent')};
+	transition: all 200ms;
 
 	&:hover, &:focus-within{
 		filter: opacity(.8);

@@ -55,13 +55,13 @@ export default function NavBarStyled() {
 		<Logo src={LogoWhite} alt="Logo RFR"/>
 
 		<ThemeToggle type="button">
-			<ThemeIcon>🌑</ThemeIcon>
+			<ThemeIcon aria-hidden="true">🌑</ThemeIcon>
 			Mudar tema
 		</ThemeToggle>
 
 		<CartCount>
-			<CartIcon>🛒</CartIcon>
-			<CartLabel>0</CartLabel>
+			<CartIcon aria-hidden="true">🛒</CartIcon>
+			<CartLabel aria-label="Quantidade de itens no carrinho">0</CartLabel>
 		</CartCount>
 	</Header>
 }
