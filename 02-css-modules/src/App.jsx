@@ -8,14 +8,18 @@ import ProductCard from "./components/ProductCard/ProductCard.jsx"
 function App() {
   const [ loading, setLoading ] = useState(true)
   const [ cartItems, setCartItems ] = useState(0)
+  const themeStored = JSON.parse(localStorage.getItem('theme'))
+  const [ isDark, setIsDark ] = useState(themeStored == 'light' || themeStored == null ? false : true)
 
   const handleAddToCart = () => {
     const updatedCount = cartItems + 1
     setCartItems(updatedCount)
   }
-  // useEffect(() => {
-  //   document.documentElement.setAttribute('data-theme', 'dark')
-  // }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
+    localStorage.setItem('theme', JSON.stringify(isDark ? 'dark' : 'light'))
+  }, [isDark])
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1200);
@@ -27,7 +31,7 @@ function App() {
 
   return (
     <>
-      <NavBar cartCount={cartItems}/>
+      <NavBar cartCount={cartItems} isDark={isDark} onChange={() => setIsDark(!isDark)}/>
       <main className={styles.main}>
         <h2>Produtos</h2>
         <div className={styles.productsGrid}>

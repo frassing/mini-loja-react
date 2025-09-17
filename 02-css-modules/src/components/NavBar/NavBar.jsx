@@ -2,14 +2,15 @@ import logoBlack from '../../assets/logo-black.png'
 import logoWhite from '../../assets/logo-white.png'
 import styles from './NavBar.module.css'
 
-function NavBar({cartCount}) {
+function NavBar({cartCount, isDark, onChange}) {
+
 	return (
 		<header className={styles.header}>
-			<img src={logoBlack} alt="Logo RFR" className={styles.logo}/>
+			<img src={isDark ? logoWhite : logoBlack} alt="Logo RFR" className={styles.logo}/>
 
 			<div className={styles.switchTheme}>
-				<input type="checkbox" name="alternar-tema" id="theme-chk" />
-				<label htmlFor="theme-chk">Alternar tema</label>
+				<input type="checkbox" name="alternar-tema" id="theme-chk" checked={isDark} onChange={onChange} />
+				<label htmlFor="theme-chk">Ativar tema escuro</label>
 			</div>
 			<div className={styles.cart}>
 				<span className={styles.cartIcon}>🛒</span>
