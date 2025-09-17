@@ -2,7 +2,7 @@ import logoBlack from '../../assets/logo-black.png'
 import logoWhite from '../../assets/logo-white.png'
 import styles from './NavBar.module.css'
 
-function NavBar() {
+function NavBar({cartCount}) {
 	return (
 		<header className={styles.header}>
 			<img src={logoBlack} alt="Logo RFR" className={styles.logo}/>
@@ -13,7 +13,7 @@ function NavBar() {
 			</div>
 			<div className={styles.cart}>
 				<span className={styles.cartIcon}>🛒</span>
-				<span className={styles.cartItems}>0</span>
+				<span className={styles.cartItems}>{cartCount}</span>
 			</div>
 		</header>
 	)

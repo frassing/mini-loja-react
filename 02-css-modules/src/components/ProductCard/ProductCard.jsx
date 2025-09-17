@@ -2,7 +2,7 @@ import Button from '../Button/Button.jsx'
 import Skeleton from '../Skeleton/Skeleton.jsx'
 import styles from './ProductCard.module.css'
 
-function ProductCard({product, loading}) {
+function ProductCard({product, loading, onAddToCart}) {
 	const formatPrice = (p) => {
 		return p.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
 	}
@@ -31,7 +31,7 @@ function ProductCard({product, loading}) {
 				</div>
 
 				{product.tag && <p className={styles.tag}>{product.tag}</p>}
-				<Button variant={btnVariant}>Adicionar ao carrinho</Button>
+				<Button variant={btnVariant} onClick={onAddToCart}>Adicionar ao carrinho</Button>
 			</article>
 		)
 	}

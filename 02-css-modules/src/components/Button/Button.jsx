@@ -1,6 +1,6 @@
 import styles from "./Button.module.css"
 
-function Button({children, variant}) {
+function Button({children, variant, onClick}) {
 	let className = `${styles.btn}`
 	if (variant == 'outline') {
 		className += ` ${styles.btnOutline}`
@@ -9,7 +9,7 @@ function Button({children, variant}) {
 	}
 	
 	return (
-		<button type="button" className={className}>{children}</button>
+		<button type="button" className={className} onClick={onClick}>{children}</button>
 	)
 }
 

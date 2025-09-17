@@ -7,6 +7,12 @@ import ProductCard from "./components/ProductCard/ProductCard.jsx"
 
 function App() {
   const [ loading, setLoading ] = useState(true)
+  const [ cartItems, setCartItems ] = useState(0)
+
+  const handleAddToCart = () => {
+    const updatedCount = cartItems + 1
+    setCartItems(updatedCount)
+  }
   // useEffect(() => {
   //   document.documentElement.setAttribute('data-theme', 'dark')
   // }, [])
@@ -21,11 +27,11 @@ function App() {
 
   return (
     <>
-      <NavBar/>
+      <NavBar cartCount={cartItems}/>
       <main className={styles.main}>
         <h2>Produtos</h2>
         <div className={styles.productsGrid}>
-          {products.map(p => <ProductCard key={p.id} product={p} loading={loading}/>)}
+          {products.map(p => <ProductCard key={p.id} product={p} loading={loading} onAddToCart={handleAddToCart}/>)}
         </div>
 
       </main>
