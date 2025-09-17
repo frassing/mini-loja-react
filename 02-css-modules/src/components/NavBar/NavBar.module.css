@@ -1,0 +1,54 @@
+.header {
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: var(--padding-sm) var(--padding-m);
+	box-shadow: 0 2px 6px -1px var(--accent-color-3);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	color: var(--text-color);
+	margin-bottom: var(--margin-sm);
+}
+
+.logo {
+	max-width: 36px;
+	transition: all 290ms;
+}
+
+.logo:hover {
+	transform: rotate(360deg);
+}
+
+.cart {
+	display: flex;
+	gap: calc(var(--gap-sm)/2);
+	align-items: center;
+}
+
+.cartIcon {
+	font-size: 1.8em;
+	transform: rotateY(180deg);
+}
+
+.cartItems {
+	font-size: 1.2em;
+	background-color: var(--accent-color);
+	padding: var(--padding-sm);
+	border-radius: var(--border-radius);
+	color: var(--light-color);
+}
+
+.switchTheme {
+	display: flex;
+	gap: var(--gap-sm);
+	align-items: center;
+}
+
+.switchTheme> input[type='checkbox'] {
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
