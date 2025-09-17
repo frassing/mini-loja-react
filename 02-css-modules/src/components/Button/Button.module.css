@@ -5,6 +5,7 @@
 	min-width: 80px;
 	cursor: pointer;
 	color: var(--accent-color-2);
+	background-color: transparent;
 }
 
 .btnSolid {
