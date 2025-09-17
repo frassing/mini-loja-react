@@ -6,15 +6,17 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-around;
 	gap: calc(var(--gap-sm)/2);
 	position: relative;
 	box-shadow: 0 3px 4px var(--shadow);
 	background-color: var(--light-color);
-
 }
 
 .cardContainer picture {
 	width: 100%;
+	min-height: 200px;
+	min-width: 200px;
 }
 
 .cardImg {
