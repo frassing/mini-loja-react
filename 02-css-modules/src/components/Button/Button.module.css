@@ -1,0 +1,28 @@
+.btn {
+	border: transparent;
+	padding: var(--padding-m);
+	font-size: 1em;
+	min-width: 80px;
+	cursor: pointer;
+	color: var(--accent-color-2);
+}
+
+.btnSolid {
+	background-color: var(--accent-color-2);
+	color: var(--light-color);
+	border: 1px solid var(--accent-color-2);
+}
+
+.btnSolid:hover {
+	background-color: var(--accent-color);
+	border: 1px solid var(--accent-color);
+}
+
+.btnOutline {
+	background-color: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+.btnOutline:hover {
+	background-color: var(--accent-color-3);
+}

@@ -1,0 +1,6 @@
+.footer {
+	background-color: var(--accent-color-2);
+	color: var(--light-color);
+	padding: var(--padding-m);
+	text-align: center;
+}
