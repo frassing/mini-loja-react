@@ -1,0 +1,14 @@
+.main {
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.productsGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	margin: var(--margin-m) var(--margin-sm);
+	gap: var(--gap-m);
+}

@@ -16,6 +16,8 @@ html, body {
 	--accent-color-2: #860847;
 	--accent-color-3: #d1127254;
 	--light-color: #fff;
+	--rating-star: #ffc82f;
+	--shadow: rgba(49, 49, 49, 0.281);
 
 	--padding-sm: 6px; 
 	--padding-m: 12px;
