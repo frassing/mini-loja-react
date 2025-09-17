@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import FooterStyled from "./components/FooterStyled"
+import NavBarStyled from './components/NavBarStyled'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       <GlobalStyle/>
+      <NavBarStyled/>
       <FooterStyled/>
     </>
   )
