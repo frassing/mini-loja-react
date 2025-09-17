@@ -13,6 +13,7 @@ function ProductCard({product, loading, onAddToCart}) {
 	} else if (product.tag == 'especial' || product.tag == 'popular') {
 		btnVariant = 'outline'
 	}
+
 	if (loading) {
 		return <Skeleton/>
 	} else {
@@ -26,8 +27,8 @@ function ProductCard({product, loading, onAddToCart}) {
 				<p className={styles.price}>{formatPrice(product.price)}</p>
 
 				<div className={styles.rating}>
-					{[...Array(5)].map((_, idx) => <span key={idx}>{idx < Math.round(product.rating) ? '★' :'☆'}</span>)}
-					{product.rating > 0 && <span className={styles.ratingValue}>{product.rating}</span>}
+					{[...Array(5)].map((_, idx) => <span key={idx} aria-hidden="true">{idx < Math.round(product.rating) ? '★' :'☆'}</span>)}
+					{product.rating > 0 && <span className={styles.ratingValue} aria-label='Avaliação do produto de 1 a 5'>{product.rating}</span>}
 				</div>
 
 				{product.tag && <p className={styles.tag}>{product.tag}</p>}
