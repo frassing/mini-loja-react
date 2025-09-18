@@ -53,7 +53,7 @@ const CartLabel = styled.span`
 	font-size: 1.3em;
 `
 
-export default function NavBarStyled({onChangeTheme}) {
+export default function NavBarStyled({onChangeTheme, cartItems}) {
 	return <Header>
 		<Logo src={LogoWhite} alt="Logo RFR"/>
 
@@ -64,7 +64,7 @@ export default function NavBarStyled({onChangeTheme}) {
 
 		<CartCount>
 			<CartIcon aria-hidden="true">🛒</CartIcon>
-			<CartLabel aria-label="Quantidade de itens no carrinho">0</CartLabel>
+			<CartLabel aria-label="Quantidade de itens no carrinho">{cartItems}</CartLabel>
 		</CartCount>
 	</Header>
 }

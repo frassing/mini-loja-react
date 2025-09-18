@@ -84,6 +84,7 @@ const H2 = styled.h2`
 
 function App() {
   const [ loading, setLoading ] = useState(true)
+  const [ cartCount, setCartCount ] = useState(0)
   const getThemePreferences = () => {
     let saved = localStorage.getItem('theme')
     if (saved == null || saved == 'light') {
@@ -100,6 +101,10 @@ function App() {
     setCurrentTheme(newTheme)
   }
 
+  const handleAddToCart = () => {
+    const updatedCount = cartCount + 1
+    setCartCount(updatedCount)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000)
@@ -112,10 +117,10 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
-      <NavBarStyled onChangeTheme={handleToggleTheme}/>
+      <NavBarStyled onChangeTheme={handleToggleTheme} cartItems={cartCount}/>
       <H2>Produtos</H2>
       <ProductsGrid>
-        {PRODUCTS.map(p => <ProductCard key={p.id} product={p} loading={loading}/>)}
+        {PRODUCTS.map(p => <ProductCard key={p.id} product={p} loading={loading} onAddToCart={handleAddToCart}/>)}
       </ProductsGrid>
       <FooterStyled />
     </ThemeProvider>

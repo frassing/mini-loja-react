@@ -69,7 +69,7 @@ const RatingStar = styled.span`
 	color: var(--star-color);
 `
 
-export default function ProductCard({product, loading}) {
+export default function ProductCard({product, loading, onAddToCart}) {
 	const formatPrice = (p) => {
 		return p.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
 	}
@@ -94,7 +94,7 @@ export default function ProductCard({product, loading}) {
 				{[...Array(5)].map((_, i) => <RatingStar key={i} aria-hidden="true">{i < Math.floor(product.rating) ? '★' :'☆' }</RatingStar>)}
 			</div>
 			{product.tag && <CardTag>{product.tag}</CardTag>}
-			<ButtonStyled variant={btnVariant}>Adicionar ao carrinho</ButtonStyled>
+			<ButtonStyled variant={btnVariant} onAddToCart={onAddToCart}>Adicionar ao carrinho</ButtonStyled>
 		</Article>
 	}
 }

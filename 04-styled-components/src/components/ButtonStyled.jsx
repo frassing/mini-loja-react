@@ -16,6 +16,6 @@ const Button = styled.button`
 	}
 `
 
-export default function ButtonStyled({children, variant}){
-	return <Button $variant={variant} type="button">{children}</Button>
+export default function ButtonStyled({children, variant, onAddToCart}){
+	return <Button $variant={variant} type="button" onClick={onAddToCart}>{children}</Button>
 }
