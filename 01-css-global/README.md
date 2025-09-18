@@ -19,7 +19,7 @@ Uma mini aplicação de loja construída com React + Vite, que exibe produtos em
 1. Clone este repositório e acesse a pasta do projeto:
 ```bash
 git clone https://github.com/frassing/mini-loja-react.git
-cd mini-loja-react/01-css-globals
+cd mini-loja-react/01-css-global
 ```
 2. Instale as dependências:
 ```bash
