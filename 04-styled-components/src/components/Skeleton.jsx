@@ -17,16 +17,16 @@ const Square = styled.div`
 	min-width: 240px;
 	min-height: 240px;
 	width: 100%;
-	background-color: var(--card-shadow); 
+	background-color: var(--skeleton-color); 
 `
 
 const Line = styled.div`
-	background-color: var(--card-shadow); 
+	background-color: var(--skeleton-color); 
 	width: ${({$type}) => ($type == 'm' ? '60%' : '100%')};
 	height: ${({$type}) => ($type == 'm' ? '1.6em' : '2.5em')};
 `
 const SquareSM = styled.span`
-	background-color: var(--card-shadow); 
+	background-color: var(--skeleton-color); 
 	display: inline-block;
 	height: 1.3em;
 	width: 1.3em;
@@ -34,7 +34,7 @@ const SquareSM = styled.span`
 `
 
 const Retangle = styled.div`
-	background-color: var(--card-shadow); 
+	background-color: var(--skeleton-color); 
 	width: 80%;
 	height: 36px;
 `

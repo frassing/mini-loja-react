@@ -58,7 +58,7 @@ const CardTag = styled.p`
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	color: var(--bg-color);
+	color: var(--text-light);
 	background-color: var(--tag-bg);
 	padding: calc(var(--padding-s)/4) calc(var(--padding-s)/3);
 	font-weight: 600;
@@ -66,7 +66,7 @@ const CardTag = styled.p`
 
 const RatingStar = styled.span`
 	font-size: 1.3em;
-	color: #e4bc09;
+	color: var(--star-color);
 `
 
 export default function ProductCard({product, loading}) {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LogoBlack from '../assets/logo-black.png'
 import LogoWhite from '../assets/logo-white.png'
 
 const Header = styled.header`
@@ -24,15 +23,19 @@ const ThemeToggle = styled.button`
 	padding: var(--padding-s);
 	border: none;
 	cursor: pointer;
-	font-size: 1.2em;
+	font-size: 1.1em;
 
-	&:hover {
+	&:hover, &:focus-visible {
 		filter: opacity(.8);
 	}
 `
 
 const ThemeIcon = styled.span`
 	margin-right: 4px;
+
+	&::before {
+		content: '${props => props.theme.icon}';
+	}
 `
 
 const CartCount = styled.div`
@@ -50,12 +53,12 @@ const CartLabel = styled.span`
 	font-size: 1.3em;
 `
 
-export default function NavBarStyled() {
+export default function NavBarStyled({onChangeTheme}) {
 	return <Header>
 		<Logo src={LogoWhite} alt="Logo RFR"/>
 
-		<ThemeToggle type="button">
-			<ThemeIcon aria-hidden="true">🌑</ThemeIcon>
+		<ThemeToggle type="button" onClick={onChangeTheme}>
+			<ThemeIcon aria-hidden="true"></ThemeIcon>
 			Mudar tema
 		</ThemeToggle>
 
