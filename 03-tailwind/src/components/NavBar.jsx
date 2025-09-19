@@ -1,6 +1,6 @@
 import LogoBlack from '../assets/logo-black.png'
 
-const NavBar = () => {
+const NavBar = ({cartItems}) => {
 	return <header className="sticky top-0 z-1 flex items-center justify-between py-1.5 px-3 backdrop-blur-sm bg-linear-to-t from-transparent to-emerald-100 border-b border-b-emerald-100">
 		<img src={LogoBlack} alt="Logo RFR" className='max-w-9'/>
 
@@ -8,7 +8,7 @@ const NavBar = () => {
 
 		<div className="flex gap-1 items-center text-xl text-emerald-900">
 			<span aria-hidden='true'>🛒</span>
-			<span aria-label='Itens no carrinho'>0</span>
+			<span aria-label='Itens no carrinho'>{cartItems}</span>
 		</div>
 
 	</header>

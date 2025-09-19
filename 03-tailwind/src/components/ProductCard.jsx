@@ -1,7 +1,7 @@
 import Button from './Button'
 import Skeleton from './Skeleton'
 
-const ProductCard = ({product, loading}) => {
+const ProductCard = ({product, loading, onAddToCart}) => {
 	const formatPrice = (p) => {
 		return p.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
 	}
@@ -26,7 +26,7 @@ const ProductCard = ({product, loading}) => {
 				{[...Array(5)].map((_, i) => <span key={i} className='text-amber-400 text-xl' aria-hidden='true'>{i < Math.round(product.rating) ? '★' :'☆'}</span>)}
 			</div>
 			<p className='text-yellow-900 text-sm uppercase font-bold absolute -top-7 left-0 p-1 rounded-sm'>{product.tag && product.tag+`!`}</p>
-			<Button variant={btnVariant}>Adicionar ao carrinho</Button>
+			<Button variant={btnVariant} onClick={onAddToCart}>Adicionar ao carrinho</Button>
 		</article>
 	}
 }
