@@ -6,7 +6,7 @@ const Button = ({variant, children, onClick}) => {
 		btnVariantStyles = 'border border-emerald-900'
 	}
 
-	return <button type="button" onClick={onClick} className={`p-1.5 min-w-20 my-1 mx-0.5 rounded-sm cursor-pointer transition-opacity text-emerald-950 hover:opacity-80 ${btnVariantStyles}`}>{children}</button>
+	return <button type="button" onClick={onClick} className={`p-1.5 min-w-20 my-1 mx-0.5 rounded-sm cursor-pointer transition-opacity text-emerald-950 hover:opacity-80 ${btnVariantStyles} focus-visible:outline-offset-2 focus-visible:outline-amber-300`}>{children}</button>
 }
 
 export default Button
